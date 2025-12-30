@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Form</title>
+</head>
+<body>
+
+    <div class="container">
+        <% if (locals.data) { %>
+        <form class="form" action="/edit/<%=data.id%>" method="post">
+            <label for="id" > Id </label>
+            <input type="text" name="id" id="id" value="<%= data.id%>">
+            <label for="country" > Country </label>
+            <input type="text" name="country" id="country" value="<%= data.country%>" > 
+            <label for="capital" > Capital </label>
+            <input type="text" name="capital" id="capital" value="<%= data.capital%>"> 
+            <input type="submit" name="Submit">
+        </form>
+   <%} else { %>
+        <form class="form" action="/submit" method="post">
+            <label for="id" > Id </label>
+            <input type="text" name="id" id="id" >
+            <label for="country" > Country </label>
+            <input type="text" name="country" id="country" > 
+            <label for="capital" > Capital </label>
+            <input type="text" name="capital" id="capital" > 
+            <input type="submit" name="Submit">
+        </form>
+   <% } %>
+    </div>
+    
+</body>
+</html>
